@@ -1,0 +1,28 @@
+
+<%= link_to "New article",new_article_path%>
+<h1 class="text-primary">Articles</h1>
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @articls.each do |let|%>
+		<tr>
+			<td><%= let.id%></td>
+			<td><%= let.title%></td>
+			<td><%= let.body%></td>
+			<td><%= link_to "Edit", edit_article_path(let) %>
+				<%= link_to "Destroy", article_path(let), data: {
+		                    turbo_method: :delete,
+		                    turbo_confirm: "Are you sure?"
+		                  } %></td>
+		</tr>
+		<% end%>
+	</tbody>
+</table>
+
