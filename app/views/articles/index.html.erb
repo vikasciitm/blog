@@ -1,12 +1,13 @@
 
 <%= link_to "New article",new_article_path%>
 <h1 class="text-primary">Articles</h1>
-<table>
+<table class="table">
 	<thead>
 		<tr>
 			<th>#</th>
 			<th>Title</th>
 			<th>Description</th>
+			<th>Email</th>
 			<th>Action</th>
 		</tr>
 	</thead>
@@ -16,6 +17,7 @@
 			<td><%= let.id%></td>
 			<td><%= let.title%></td>
 			<td><%= let.body%></td>
+			<td><%= let.email%></td>
 			<td><%= link_to "Edit", edit_article_path(let) %>
 				<%= link_to "Destroy", article_path(let), data: {
 		                    turbo_method: :delete,
